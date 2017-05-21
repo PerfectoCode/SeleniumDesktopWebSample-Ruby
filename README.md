@@ -4,7 +4,7 @@ This code sample demonstrates how to use Perfecto Web Machines & Selenium + Ruby
 for your web applications on the cloud. 
 
 ### Getting Stated: 
-- Clone or download the sample:<br/> `git clone https://github.com/PerfectoCode/WebAutomationSampleJava.git`
+- Clone or download the sample:<br/> `git clone https://github.com/PerfectoCode/WebAutomationSampleRuby.git`
 - Add your Perfecto Lab credentials within the [WebAppE2E.rb](WebAppE2E.rb) file:
 ```Ruby
 ...
