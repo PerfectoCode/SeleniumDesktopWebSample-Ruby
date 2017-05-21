@@ -13,7 +13,7 @@ for your web applications on the cloud.
 @@User = ENV['user']
 @@Pass = ENV['password']
 @@Host = ENV['host']
-@@token = 'MyAuthToken'
+@@token = ENV['token']
 ... 
 ```
 Note! you may want to use env variable for your credentials as demonstrated
