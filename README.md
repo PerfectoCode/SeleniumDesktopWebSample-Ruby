@@ -7,7 +7,7 @@ for your web applications on the cloud.
 
 ### Getting Stated: 
 - Clone or download the sample:<br/> `git clone https://github.com/PerfectoCode/WebAutomationSampleRuby.git`
-- Add your Perfecto Lab credentials within the [WebAppE2E.rb](WebAppE2E.rb) file:
+- Add your Perfecto Lab credentials within the [WebAppE2E.rb](PerfectoWebTemplate.rb) file:
 ```Ruby
 ...
 @@User = ENV['user']
@@ -17,7 +17,14 @@ for your web applications on the cloud.
 ... 
 ```
 Note! you may want to use env variable for your credentials as demonstrated
-- Run the project from your IDE or using command line `ruby WebAppE2E.rb`
+
+- Note:exclamation: the project include 4 templates: 
+    - PerfectoFastWebTemplate: template for Perfecto Turbo Web.
+    - PerfectoFastWebTemplateReporting: template for Perfecto Turbo Web + DigitalZoom Reporting.
+    - PerfectoWebTemplate: basic web automation template.
+    - PerfectoWebTemplateReporting: same as the basic template + DigitalZoom Reporting.
+    
+- Run the project from your IDE or using command line for example `ruby PerfectoFastWebTemplate.rb`
 
 ### Web Capabilities: 
 
@@ -34,7 +41,7 @@ capabilities = {
     user: @@User,
     password: @@Pass
 }
-_url = 'http://' + @@Host + '/nexperience/perfectomobile/wd/hub'
+_url = 'http://' + @@Host + '/nexperience/perfectomobile/wd/hub' 
 ```
 
 - More capabilities are available, read more [here](http://developers.perfectomobile.com/display/PD/Supported+Platforms).
@@ -46,12 +53,25 @@ Perfecto's Desktop Web environment introduces an accelerated interface to Web Br
 *Click [here](http://developers.perfectomobile.com/display/PD/Turbo+Web+Automation) to read more about Turbo Web Automation.*
 
 - To enable Turbo Web Automation in this code sample follow the instructions in the link above in order to generate authentication token.
-Place the authentication in [WebAppE2E.rb](WebAppE2E.rb) file::
+Place the authentication in one of the Turbo Web test's files:
 ```Ruby
-# For Perfecto Turbo Web solution follow the instructions at http://developers.perfectomobile.com/display/PD/Turbo+Web+Automation
-# Enable the following lines of code to enable Turbo Web:
-# _url += '/fast'
-# capabilities['securityToken'] = @@token
+@@Host = ENV['host']
+@@token = ENV['token']
+
+attr_accessor :driver, :reportiumClient, :exception
+
+# Called before every test method runs. Can be used
+# to set up fixture information.
+def setup
+capabilities = {
+    platformName: 'Windows',
+    platformVersion: '10',
+    browserName: 'Chrome',
+    browserVersion: '58',
+    resolution: '1280x1024',
+    securityToken: @@token,
+}
+...
 ```
 
 ### Perfecto DigitalZoom reporting:

@@ -8,7 +8,6 @@ class MyTest < Test::Unit::TestCase
   @@User = ENV['user']
   @@Pass = ENV['password']
   @@Host = ENV['host']
-  @@token = 'MyAuthToken'
 
   attr_accessor :driver, :reportiumClient, :exception
 
@@ -25,11 +24,6 @@ class MyTest < Test::Unit::TestCase
         password: @@Pass
     }
     _url = 'http://' + @@Host + '/nexperience/perfectomobile/wd/hub'
-
-    # For Perfecto Turbo Web solution follow the instructions at http://developers.perfectomobile.com/display/PD/Turbo+Web+Automation
-    # Enable the following lines of code to enable Turbo Web:
-    # _url += '/fast'
-    # capabilities['securityToken'] = @@token
 
     @driver = Selenium::WebDriver.for(:remote, :url => _url, :desired_capabilities => capabilities)
     @reportiumClient = create_reportium_client
@@ -77,27 +71,12 @@ class MyTest < Test::Unit::TestCase
       @reportiumClient.testStart(self.name, TestContext.new('Tag2', 'Tag3'))
       puts 'Run started'
 
-      # complete your test here instead of the sample scenario
-
       ## Sample Scenario ##
-      @reportiumClient.stepStart 'Step 1: Navigate to developers.perfectomobile.com'
-      @driver.get 'http://developers.perfectomobile.com/'
+      @reportiumClient.stepStart 'Navigate to google'
+      @driver.get 'http://google.com/'
       @reportiumClient.stepEnd
 
-      @reportiumClient.stepStart 'Step 2: Search for \"Turbo Web\" documentation'
-      search_val = 'Turbo Web'
-      @driver.find_element(:id => 'quick-search-query').send_keys(search_val)
-      @reportiumClient.stepEnd
-
-      @reportiumClient.stepStart 'Step 3: Click the Turbo Web Automation search result'
-      @driver.find_element(:xpath => '//*[contains(text(), "Turbo Web Automation")]').click
-      @reportiumClient.stepEnd
-
-      @reportiumClient.stepStart 'Step 3: Assert page contain text'
-      text = 'Platforms Supported by Turbo Web'
-      elem = @driver.find_elements(:xpath => "//*[contains(text(), 'Platforms Supported by Turbo Web')]")
-      @reportiumClient.reportiumAssert("Text %s is presented?" % text, (not elem.empty?))
-      @reportiumClient.stepEnd
+      # complete your test here
     end
   end
 
