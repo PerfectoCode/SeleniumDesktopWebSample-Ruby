@@ -1,5 +1,7 @@
 # Ruby Web Automation Code Sample
 
+[![CircleCI](https://circleci.com/gh/PerfectoCode/WebAutomationSampleRuby.svg?style=svg)](https://circleci.com/gh/PerfectoCode/WebAutomationSampleRuby)
+
 This code sample demonstrates how to use Perfecto Web Machines & Selenium + Ruby programing language in order to execute tests 
 for your web applications on the cloud. 
 
