@@ -71,7 +71,6 @@ class MyTest < Test::Unit::TestCase
       @reportiumClient.testStart(self.name, TestContext.new('Tag2', 'Tag3'))
       puts 'Run started'
 
-      ## Sample Scenario ##
       @reportiumClient.stepStart 'Navigate to google'
       @driver.get 'http://google.com/'
       @reportiumClient.stepEnd
