@@ -2,7 +2,10 @@ require 'test/unit'
 require 'perfecto-reporting'
 require 'selenium-webdriver'
 
-# Perfecto Web Automation Code Sample
+
+# Perfecto Desktop Web Using Selenium WebDriver:
+# This project demonstrate simply how to open a Desktop Web
+# machine within your Perfecto Lab in the cloud and running your tests
 class MyTest < Test::Unit::TestCase
 
   @@User = ENV['user']
