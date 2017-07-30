@@ -74,10 +74,9 @@ class MyTest < Test::Unit::TestCase
       @reportiumClient.testStart(self.name, TestContext.new('Tag2', 'Tag3'))
       puts 'Run started'
 		
-	  # DigitalZoom reporting stepStart/ stepEnd soon to be implemented in Turbo Web
-      # @reportiumClient.stepStart 'Navigate to google'
+      @reportiumClient.stepStart 'Navigate to google'
       @driver.get 'http://google.com/'
-      # @reportiumClient.stepEnd
+      @reportiumClient.stepEnd
 
       # complete your test here
     end
