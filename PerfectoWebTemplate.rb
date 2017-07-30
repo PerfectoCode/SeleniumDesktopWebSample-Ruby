@@ -6,8 +6,7 @@ require 'selenium-webdriver'
 # machine within your Perfecto Lab in the cloud and running your tests
 class MyTest < Test::Unit::TestCase
 
-  @@User = ENV['user']
-  @@Pass = ENV['password']
+  @@token = ENV['token']
   @@Host = ENV['host']
 
   attr_accessor :driver, :reportiumClient, :exception
@@ -21,8 +20,7 @@ class MyTest < Test::Unit::TestCase
         browserName: 'Chrome',
         browserVersion: '58',
         resolution: '1280x1024',
-        user: @@User,
-        password: @@Pass
+        securityToken: @@token
     }
     _url = 'http://' + @@Host + '/nexperience/perfectomobile/wd/hub'
 
