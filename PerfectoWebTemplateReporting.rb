@@ -10,6 +10,7 @@ class MyTest < Test::Unit::TestCase
 
   @@User = ENV['user']
   @@token = ENV['token']
+  @@Host = ENV['host']
 
   attr_accessor :driver, :reportiumClient, :exception
 
