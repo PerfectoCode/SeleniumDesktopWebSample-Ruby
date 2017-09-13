@@ -6,8 +6,9 @@ require 'selenium-webdriver'
 # This project demonstrate simply how to open a Desktop Web
 # machine within your Perfecto Lab in the cloud and running your tests
 #
-# The project uses Perfecto Turbo Web, for more information follow the instructions at:
-# http://developers.perfectomobile.com/display/PD/Turbo+Web+Automation
+# The project uses Perfecto Turbo Web, for more information please visit:
+# http://developers.perfectomobile.com/display/PD/Automating+Web-apps+with+Perfecto
+
 class MyTest < Test::Unit::TestCase
 
   @@Host = ENV['host']
@@ -24,7 +25,7 @@ class MyTest < Test::Unit::TestCase
         browserName: 'Chrome',
         browserVersion: '58',
         resolution: '1280x1024',
-        securityToken: @@token,
+        securityToken: @@token
     }
     _url = 'http://' + @@Host + '/nexperience/perfectomobile/wd/hub/fast'
 
@@ -44,7 +45,7 @@ class MyTest < Test::Unit::TestCase
       @driver.get 'http://google.com/'
 
       # complete your test here
+
     end
   end
-
 end
